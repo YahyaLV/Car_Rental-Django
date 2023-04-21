@@ -23,3 +23,5 @@ class Vehicles(models.Model):
     capacity = models.CharField(max_length = 2)
     is_available = models.BooleanField(default = True)
     description = models.CharField(max_length = 100)
+    photo = models.ImageField(upload_to='vehicle_photos/', blank=True, null=True)
+

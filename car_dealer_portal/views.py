@@ -53,7 +53,6 @@ def registration(request):
     city = request.POST['city']
     city = city.lower()
     pincode = request.POST['pincode']
-
     try:
         user = User.objects.create_user(username = username, password = password, email = email)
         user.first_name = firstname
@@ -85,17 +84,18 @@ def add_vehicle(request):
     pincode = request.POST['pincode']
     description = request.POST['description']
     capacity = request.POST['capacity']
+    photo = request.POST['photo']
     try:
         area = Area.objects.get(city = city, pincode = pincode)
     except:
         area = None
     if area is not None:
-        car = Vehicles(car_name=car_name, color=color, dealer=cd, area = area, description = description, capacity=capacity)
+        car = Vehicles(car_name=car_name, color=color, dealer=cd, area = area, description = description, capacity=capacity ,photo=photo)
     else:
         area = Area(city = city, pincode = pincode)
         area.save()
         area = Area.objects.get(city = city, pincode = pincode)
-        car = Vehicles(car_name=car_name, color=color, dealer=cd, area = area,description=description, capacity=capacity)
+        car = Vehicles(car_name=car_name, color=color, dealer=cd, area = area,description=description, capacity=capacity ,photo=photo)
     car.save()
     return render(request, 'car_dealer/vehicle_added.html')
 
