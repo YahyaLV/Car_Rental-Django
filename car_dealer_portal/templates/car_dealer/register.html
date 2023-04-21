@@ -1,27 +1,92 @@
 {% extends 'car_dealer/base.html' %}
 {% block content %}
 <div class="w3-bar">
- 
   <a class="w3-bar-item w3-right w3-btn w3-teal" href="/car_dealer_portal/login/">Login</a>
   <a class="w3-bar-item w3-right w3-btn w3-teal" href="/">Home</a>
 </div>
-<div class="w3-display-container"  style="height:1000px;">
-<div class="w3-display-middle">
+<section class="h-100 gradient-form">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
 
-  <b> <h2>Registration Form</h2></b>
+                <div class="text-center">
+                  <img src="https://previews.123rf.com/images/deusexlupus/deusexlupus1602/deusexlupus160200019/52476622-bright-red-sports-car-on-white-background.jpg"
+                    style="width: 185px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">WELCOM !</h4>
+                </div>
 
-<form class="w3-container" action="/car_dealer_portal/registration/" method="POST">{% csrf_token %}
-  <lable>First Name</lable> <input class="w3-input" type="text" name="firstname"><br><br>
-  <lable>Last Name</lable> <input class="w3-input" type="text" name="lastname"><br><br>
-  <lable>Username</lable> <input class="w3-input" type="text" name="username"><br><br>
-  <lable>Password</lable> <input class="w3-input" type="password" name="password"><br><br>
-  <lable>Email</lable> <input class="w3-input" type="text" name="email"><br><br>
-  <lable>Contact</lable> <input class="w3-input" type="text" name="mobile"><br><br>
-  <lable>City</lable> <input class="w3-input" type="text" name="city"><br><br>
-  <lable>Pincode</lable> <input class="w3-input" type="text" name="pincode"><br><br>
-  <input class="w3-btn w3-teal" type="submit"><br><br>
-</form>
-</div>
-</div>
+                <form action="/car_dealer_portal/registration/" method="POST">{% csrf_token %}
+                  <p>Please login to your account</p>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="firstname" id="form2Example11" class="form-control" />
+                    <label class="form-label" for="form2Example11">FirstName</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="lastname" id="form2Example11" class="form-control" />
+                    <label class="form-label" for="form2Example11">LastName</label>
+                  </div>
+                  
+                  <div class="form-outline mb-4">
+                    <input type="text" name="username" id="form2Example11" class="form-control" />
+                    <label class="form-label" for="form2Example11">Username</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" name="password" id="form2Example11" class="form-control" />
+                    <label class="form-label" for="form2Example11">Password</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="email" id="form2Example11" class="form-control" />
+                    <label class="form-label" for="form2Example11">Email</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="mobile" id="form2Example11" class="form-control" />
+                    <label class="form-label" for="form2Example11">Contact</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="city" id="form2Example11" class="form-control" />
+                    <label class="form-label" for="form2Example11">City</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="pincode" id="form2Example11" class="form-control" />
+                    <label class="form-label" for="form2Example11">Pincode</label>
+                  </div>
+
+                 
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" value="Login">Register</button>
+
+                  </div>
+
+                 
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">Bénéficiez de la meilleure expérience</h4>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 {% endblock %}
