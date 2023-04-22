@@ -22,9 +22,8 @@
   </tr>
   {% for vehicle in vehicle_list %}
   <tr>
-      <td> {% if vehicle.photo %}
-        <img src="{{ vehicle.photo.url }}" alt="{{ vehicle.photo.name }}">
-    {% endif %}
+      <td> 
+        <img style="height: 200px; width: 200px;" src="C:/Users/Mehdi/Desktop/django/Car_Rental-Django{{ vehicle.image.url }}" alt="{{ vehicle.car_name }}">
       </td>
       <td>{{vehicle.color}}</td>
       <td>{{vehicle.capacity}} Seats</td>
