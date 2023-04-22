@@ -84,18 +84,18 @@ def add_vehicle(request):
     pincode = request.POST['pincode']
     description = request.POST['description']
     capacity = request.POST['capacity']
-    photo = request.POST['photo']
+    image = request.FILES['image']
     try:
         area = Area.objects.get(city = city, pincode = pincode)
     except:
         area = None
     if area is not None:
-        car = Vehicles(car_name=car_name, color=color, dealer=cd, area = area, description = description, capacity=capacity ,photo=photo)
+        car = Vehicles(car_name=car_name, color=color, dealer=cd, area = area, description = description, capacity=capacity ,image=image)
     else:
         area = Area(city = city, pincode = pincode)
         area.save()
         area = Area.objects.get(city = city, pincode = pincode)
-        car = Vehicles(car_name=car_name, color=color, dealer=cd, area = area,description=description, capacity=capacity ,photo=photo)
+        car = Vehicles(car_name=car_name, color=color, dealer=cd, area = area,description=description, capacity=capacity ,image=image)
     car.save()
     return render(request, 'car_dealer/vehicle_added.html')
 
